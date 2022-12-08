@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="raw_app_name">罗雄代码</string>
+    <string name="main_k1">请检查网络连接</string>
+    <string name="main_k2">刷新</string>
+    <string name="main_k3">时间</string>
+    <string name="main_k4">所有</string>
+    <string name="main_k5">所有语言</string>
+    <string name="main_k6">点击重新加载</string>
+    <string name="main_k7">追加一句评论~</string>
+    <string name="main_k8">敬请期待</string>
+    <string name="main_k9">我是一个列表布局</string>
+    <string name="main_k10">网页无法打开</string>
+</resources>

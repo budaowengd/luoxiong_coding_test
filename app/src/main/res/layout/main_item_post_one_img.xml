@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.lx.test.model.PostOneImgModel" />
+
+        <variable
+            name="click"
+            type="com.lx.test.adapter.BaseRvFun2ItemClickEvent" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="8pt"
+        android:onClick="@{()->click.clickRvItem(item,0)}"
+        tools:background="#fff">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16pt"
+            android:layout_marginTop="12pt"
+            android:layout_marginEnd="16pt"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="4"
+            android:text="@{item.title}"
+            android:textColor="@color/main_text_color"
+            android:textSize="14pt"
+            app:layout_constraintEnd_toStartOf="@id/ivImg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="我是标题我我是标题我是标标题1111题我是标题我是标题我是标题我我是标题我是标标题1111题我是标题我是标题我是标题我我是标题我是标标题1111题我是标题我是标题我是标题我我是标题我是标标题1111题我是标题我是标题我是标题我我是标题我是标标题1111题我是标题我是标题我是标题我我是标题我是标标题1111题我是标题我是标题我是标题我我是标题我是标标题1111题我是标题我是标题我是标题我我是标题我是标标题1111题我是标题我是标题" />
+
+        <ImageView
+            android:id="@+id/ivImg"
+            bind_img_corner="@{@dimen/pt_8}"
+            bind_img_url="@{item.imgUrl}"
+            bind_img_widthHeight="@{@dimen/pt_100}"
+            android:layout_width="100pt"
+            android:layout_height="100pt"
+            android:layout_marginStart="16pt"
+            android:layout_marginTop="12pt"
+            android:layout_marginEnd="16pt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="#3f00" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10pt"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="ivImg,tvTitle" />
+
+        <TextView
+            android:id="@+id/tvCreateDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6pt"
+            android:text="@{item.createDate}"
+            android:textColor="@color/sub_text_color"
+            android:textSize="12pt"
+            app:layout_constraintBottom_toBottomOf="@id/barrier"
+            app:layout_constraintStart_toStartOf="@id/tvTitle"
+            tools:text="2022-12-09" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+

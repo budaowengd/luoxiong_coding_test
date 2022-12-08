@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.lx.test.model.PostListLanguageSelectModel" />
+
+        <variable
+            name="click"
+            type="com.lx.test.adapter.BaseRvFun2ItemClickEvent" />
+
+    </data>
+
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="48pt"
+        android:gravity="center_vertical"
+        android:onClick="@{()->click.clickRvItem(item,0)}"
+        android:paddingStart="16pt"
+        android:paddingEnd="16pt"
+        android:text="@{item.languageName}"
+        android:textColor="@{item.selected?@color/colorPrimary:@color/main_text_color}"
+        android:textSize="14pt"
+        tools:text="abcdefg" />
+
+</layout>
+
+
+

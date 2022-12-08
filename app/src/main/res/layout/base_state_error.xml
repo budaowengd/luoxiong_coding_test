@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/base_vector_http_req_error" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12pt"
+            android:text="@string/main_k1"
+            android:textColor="@color/black"
+            android:textSize="13pt" />
+
+        <TextView
+            android:id="@+id/btnErrorRefresh"
+            bind_bg_bgColor="@{@android:color/holo_red_dark}"
+            bind_bg_radius="@{@dimen/pt_8}"
+            android:layout_width="wrap_content"
+            android:layout_height="40pt"
+            android:layout_marginTop="16pt"
+            android:gravity="center"
+            android:paddingStart="40pt"
+            android:paddingEnd="40pt"
+            android:text="@string/main_k2"
+            android:textColor="@color/white"
+            android:textSize="14pt"
+            tools:background="@android:color/holo_red_dark" />
+    </LinearLayout>
+</layout>
+
+
+

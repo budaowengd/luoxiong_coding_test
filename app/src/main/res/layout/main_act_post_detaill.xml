@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llTitle"
+            android:layout_width="match_parent"
+            android:layout_height="48pt"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivClose"
+                bind_iv1_icon_height="@{@dimen/pt_18}"
+                bind_iv1_icon_width="@{@dimen/pt_18}"
+                bind_iv1_layout_wh="@{@dimen/pt_48}"
+                bind_iv1_src_drawable="@{@drawable/mine_ic_close_grey}"
+                android:layout_width="@dimen/pt_48"
+                android:layout_height="@dimen/pt_48"
+                tools:background="#3f00"
+                tools:src="@drawable/mine_ic_close_grey" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15pt"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="@color/main_text_color"
+                android:textSize="16pt"
+                android:textStyle="bold"
+                tools:text="abcdefg" />
+        </LinearLayout>
+
+        <com.lx.test.base.views.StateLayout
+            android:id="@+id/stateLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llTitle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="2pt"
+                    android:progressDrawable="@drawable/main_progress_webview"
+                    android:visibility="visible" />
+
+                <com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout
+                    android:id="@+id/csl"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <WebView
+                        android:id="@+id/webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="400pt"
+                                android:background="#3f00"
+                                android:gravity="center"
+                                android:text="@string/main_k9"
+                                android:textColor="@color/main_text_color"
+                                android:textSize="16pt" />
+
+                        </LinearLayout>
+                    </androidx.core.widget.NestedScrollView>
+                </com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout>
+
+                <LinearLayout
+                    android:id="@+id/llSendComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="10pt">
+
+                    <TextView
+                        android:id="@+id/tvSendComment"
+                        bind_bg_bgColor="@{@color/window_bg}"
+                        bind_bg_isRadiusAdjustBounds="@{true}"
+                        android:layout_width="match_parent"
+                        android:layout_height="34pt"
+                        android:gravity="center_vertical"
+                        android:paddingStart="12pt"
+                        android:paddingEnd="12pt"
+                        android:text="@string/main_k7"
+                        android:textColor="@color/color_c3c3c3"
+                        android:textSize="12pt"
+                        tools:background="#3f00" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.lx.test.base.views.StateLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+

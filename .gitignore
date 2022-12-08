@@ -1,6 +1,5 @@
 # Built application files
 *.apk
-*.aar
 *.ap_
 *.aab
 
@@ -9,6 +8,7 @@
 
 # Java class files
 *.class
+.idea/
 
 # Generated files
 bin/
@@ -38,17 +38,6 @@ captures/
 
 # IntelliJ
 *.iml
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/gradle.xml
-.idea/assetWizardSettings.xml
-.idea/dictionaries
-.idea/libraries
-# Android Studio 3 in .gitignore file.
-.idea/caches
-.idea/modules.xml
-# Comment next line if keeping position of elements in Navigation Editor is relevant for you
-.idea/navEditor.xml
 
 # Keystore files
 # Uncomment the following lines if you do not want to check your keystore files in.
@@ -83,3 +72,53 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+# Android Profiling
+*.hprof
+
+.classpath
+.DS_Store
+.gradle
+.idea
+.mtj.tmp/
+.project
+.vscode/
+*.ctxt
+*.ear
+*.nar
+*.rar
+*.tar.gz
+*.war
+*.zip
+/.idea
+/.settings
+/app/.settings
+/build
+/captures pull
+/local.properties
+/objectbox-models
+build
+gen
+hs_err_pid*
+maven-repository
+mvn-clone
+objectbox-models
+out
+target
+log.txt
+.hprof
+*/log.txt
+
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+
+# Other files and folders
+.settings/
+
+# Executables
+*.swf
+*.air
+*.ipa

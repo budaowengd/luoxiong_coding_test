@@ -1,0 +1,18 @@
+<resources>
+    <string name="raw_app_name">LuoXiongCoding</string>
+    <string name="main_k1">Please check your network connection</string>
+    <string name="main_k2">Refresh</string>
+    <string name="main_k3">Date</string>
+    <string name="main_k4">All</string>
+    <string name="main_k5">All languages</string>
+    <string name="main_k6">Click reload</string>
+    <string name="main_k7">Add a comment~</string>
+    <string name="main_k8">Coming soon</string>
+    <string name="main_k9">I am a list layout</string>
+    <string name="main_k10">Web page cannot be opened</string>
+
+
+
+
+
+</resources>

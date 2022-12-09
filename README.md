@@ -16,7 +16,7 @@
 
 该项目使用Kotlin语言进行开发，[基于PT实现屏幕适配](https://blankj.com/2018/12/18/android-adapt-screen-killer/#more)，采用MVVM架构 + Databinding + Google [Jetpack](https://developer.android.google.cn/jetpack)组件搭建项目。 但是和谷歌官网的MVVM架构思想有些不同，比如官方建议使用Repository层管理数据，如果有些页面只需要网络数据，不需要本地缓存的话，就没必要加Repository层，减少模板代码。下面我对本项目中的亮点进行介绍。
 
-## 2.1 基于泛型减少模板代码
+## 3.1 基于泛型减少模板代码
 
 业务层只需要声明ViewModel 和 Manager，Base层会基于反射创建具体类，业务层无需关注具体实现细节。
 
@@ -54,7 +54,7 @@ class MainAct : BaseAct<MainActBinding, MainVm, MainManager>(R.layout.main_act) 
 
 
 
-## 2.2 添加Manager业务层
+## 3.2 添加Manager业务层
 
 传统MVVM模式，业务逻辑一般放ViewModel中，但是由于ViewModel不能持有Activity或View的引用，有时候处理基于View的弹窗等逻辑不方便。放在Activity会使得View层代码过多，难以维护。所以新增了Manager层专门处理业务逻辑，其生命周期和Activity相同，并持有Activity和ViewModel的引用，处理具体逻辑会方便许多。
 
@@ -70,7 +70,7 @@ class MainManager : AbstractActManager<MainAct, MainActBinding, MainVm>() {
  }
 ```
 
-## 2.3 统一管理点击事件
+## 3.3 统一管理点击事件
 
 页面的点击事件可以定义在xml中， 也可以view.setOnClickListener() ，也可以通过Databinding设置variable进行定义，长期以往，后面维护起来想快速找到某个页面的点击事件很难。   所以我借鉴kotlin的sealed语法特性，Activity或Fragment统一管理整个页面的点击事件，然后交给业务层处理具体点击逻辑。
 
@@ -117,7 +117,7 @@ class MainManager : AbstractActManager<MainAct, MainActBinding, MainVm>() {
    }
    ```
 
-## 2.4 统一管理网络请求
+## 3.4 统一管理网络请求
 
 如果我想知道某个页面总共请求了哪些接口，在什么时机下请求的，是否有loading条，loading是否阻塞，接口报错了是否有错误页面，是否会弹吐司提示用户。
 
@@ -164,7 +164,7 @@ sealed class MainActState {
 }
 ```
 
-## 2.5 命名统一后缀
+## 3.5 命名统一后缀
 
 1. Activity 跳转和 Fragment之间传值，统一使用类封装，类的后缀定义为Dto，如：
 
@@ -185,7 +185,7 @@ data class ToPostDetailActDto(
 2. 接收服务端返回的数据统一以Vo结尾。如： PostItemVo、PostDetailVo
 3. Activity中显示一个弹窗，需要传个对象给弹窗，这个对象对应的类名后缀如：ToPostListLanguageSelectDialogBo
 
-## 2.6 使用注解代替枚举和魔法数字
+## 3.6 使用注解代替枚举和魔法数字
 
 代码中不能直接使用数字定义某种含义，为了可持续维护，应该使用枚举或注解定义具体的名字。
 
